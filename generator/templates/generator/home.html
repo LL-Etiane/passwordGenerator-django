@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>My random password generator</title>
+
+    <style>
+        .inner-section__form{
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <a href="{% url 'about' %}" class="nav-link">About</a>
+        </nav>
+        <div class="text-center">
+            <h1>Random password generator build with love by <i>etiane</i></h1>
+        </div>
+
+        <div class="inner-section">
+            <div class="inner-section__form">
+
+                <form action="{% url 'textGenerator' %}">
+                    <div class="form-group">
+                        <label for="lenght">Select the lenght of the password you want to generate</label>
+                        <select name="lenght" id="lenght" class="form-control">
+                            <option value="6">6</option>
+                            <option value="12" selected="selected">12</option>
+                            <option value="18">18</option>
+                            <option value="24">24</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="generate" class="btn btn-primary btn-sm">
+                    </div>
+                </div>
+                </form>
+
+            </div>
+    </div>
+</body>
+</html>
